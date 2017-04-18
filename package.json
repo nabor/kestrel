@@ -1,0 +1,22 @@
+{
+  "name": "kernel",
+  "version": "0.0.1",
+  "description": "Email Client",
+  "main": "index.js",
+  "repository": "https://github.com/nabor/kestrel",
+  "author": "Nabor Erices",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "@types/electron": "^1.4.37",
+    "electron": "^1.6.5",
+    "electron-packager": "^8.6.0",
+    "node-sass": "^4.5.2",
+    "typescript": "^2.2.2",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
