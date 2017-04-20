@@ -8,9 +8,11 @@
   "license": "MIT",
   "scripts": {
     "start": "concurrently \"npm run watch\"  \"npm run electron\"",
+    "release": "npm run build && npm run pack",
     "build": "webpack",
     "electron": "electron dist/",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "pack": "electron-packager dist Kestrel"
   },
   "dependencies": {
     "react": "^15.5.4",
