@@ -10,7 +10,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    sourceMapFilename: '[name].map'
   },
   node: {
     __dirname: false,
@@ -32,7 +33,8 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: "./src/package.json" }
+      { from: './src/package.json' },
+      { from: './src/client_secret.json' }
     ]),
     new HtmlWebpackPlugin({
       template: './src/index.pug',

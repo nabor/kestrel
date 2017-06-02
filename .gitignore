@@ -1,3 +1,4 @@
 node_modules
 dist
 Kestrel-*
+npm-debug.log
