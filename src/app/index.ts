@@ -49,10 +49,11 @@ function authorize(credentials, callback) {
   // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, function(err, token) {
     if (err) {
-        console.log(err);
+      console.log(err);
+      console.log('Generating token');
       getNewToken(oauth2Client, callback);
     } else {
-        console.log(token.toString());
+      console.log(token.toString());
       oauth2Client.credentials = JSON.parse(token.toString());
       callback(oauth2Client);
     }
