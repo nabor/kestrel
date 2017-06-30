@@ -2,8 +2,11 @@ import * as url from 'url'
 import * as path from 'path'
 
 import { app, BrowserWindow } from 'electron';
+//import { run } from './api';
 
 console.log('Electron main file');
+
+//run();
 
 let win
 

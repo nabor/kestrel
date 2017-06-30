@@ -5,8 +5,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-      main: './src/main.ts',
       app: './src/app/index.ts'
+  },
+  resolve: {
+    extensions: ['.js', '.json', '.ts']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -23,7 +25,7 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        use: 'awesome-typescript-loader'
+        use: 'awesome-typescript-loader?configFileName=tsconfig.webpack.json'
       },
       {
         test: /\.pug$/,

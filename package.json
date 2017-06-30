@@ -9,9 +9,13 @@
   "scripts": {
     "start": "concurrently \"npm run watch\"  \"npm run electron\"",
     "release": "npm run build && npm run pack",
-    "build": "webpack",
+    "build": "npm run build:typescript && npm run build:webpack",
+    "build:webpack": "webpack",
+    "build:typescript": "tsc",
     "electron": "electron dist/",
-    "watch": "webpack --watch",
+    "watch": "concurrently \"npm run watch:webpack\"  \"npm run watch:typescript\"",
+    "watch:webpack": "npm run build:webpack - --watch",
+    "watch:typescript": "npm run build:typescript - --watch",
     "pack": "electron-packager dist Kestrel"
   },
   "dependencies": {
@@ -32,7 +36,7 @@
     "node-sass": "^4.5.2",
     "pug-html-loader": "^1.1.4",
     "raw-loader": "^0.5.1",
-    "typescript": "^2.2.2",
+    "typescript": "^2.3.4",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"
   }
